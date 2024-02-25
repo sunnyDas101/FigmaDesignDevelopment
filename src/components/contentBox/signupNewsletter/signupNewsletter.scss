@@ -1,0 +1,65 @@
+@import "../../../mixins.scss";
+
+.signupNewsletter {
+  padding: 3.75rem 0 1.25rem 2.188rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  @include for-tablet-landscape-down {
+    flex-direction: column;
+  }
+
+  .signUp-title {
+    width: 35%;
+    height: fit-content;
+    @include for-tablet-landscape-down {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 44px;
+      color: #5c6874;
+      @include for-tablet-landscape-down {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .signUp-forum {
+    position: relative;
+
+    input {
+      width: 20vw;
+      height: 52px;
+      border: none;
+      outline: none;
+      border-radius: 12px 0 0 12px;
+      @include for-tablet-landscape-down {
+        width: 30vw;
+      }
+    }
+
+    button {
+      width: 6vw;
+      height: 52px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.7px;
+      border: none;
+      outline: none;
+      border-radius: 0 12px 12px 0;
+      background-color: #1b88f4;
+      color: #fff;
+      cursor: pointer;
+      @include for-tablet-landscape-down {
+        width: 20vw;
+        letter-spacing: 0;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

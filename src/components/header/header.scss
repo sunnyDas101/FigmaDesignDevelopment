@@ -1,0 +1,89 @@
+@import "../../mixins.scss";
+
+.navbar-container {
+  width: 100vw;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212731;
+  color: #d1d6da;
+
+  .navbar {
+    width: 50vw;
+    margin-left: 11.25rem;
+    display: flex;
+    justify-content: space;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    @include for-tablet-landscape-down {
+      margin: 0;
+    }
+
+    .navbar-searchbar-container {
+      margin: 0 auto;
+      display: flex;
+      flex: 1;
+      position: relative;
+
+      .navbar-searchbar {
+        width: 15vw;
+        height: 37px;
+        padding-left: 2.188rem;
+        border-radius: 0.5rem;
+        border: none;
+        outline: none;
+        @include for-tablet-landscape-down {
+          width: 100%;
+          padding: 0;
+        }
+      }
+
+      .icon {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        color: #748492;
+      }
+    }
+
+    .navbar-list {
+      display: flex;
+      text-align: center;
+      flex: 2;
+      list-style: none;
+      position: relative;
+      cursor: pointer;
+      @include for-tablet-landscape-down {
+        display: none;
+      }
+
+      .navbar-item {
+        width: 12vw;
+        font-size: 0.875rem;
+        line-height: 20px;
+        @include for-desktop-down {
+          font-size: 0.75rem;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background-color: #2196f3;
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
